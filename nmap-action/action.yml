@@ -1,6 +1,5 @@
 name: "nmap action"
 description: "Scans a target and export the results to a Github issue."
-author: "tan.jia.le.98@gmail.com"
 
 inputs:
   IP_ADDRESS:
