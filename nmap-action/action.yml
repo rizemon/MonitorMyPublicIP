@@ -1,0 +1,20 @@
+name: "nmap action"
+description: "Scans a target and export the results to a Github issue."
+author: "tan.jia.le.98@gmail.com"
+
+inputs:
+  IP_ADDRESS:
+    description: "Target to scan"
+    required: true
+
+  GITHUB_TOKEN:
+    description: "Token to access Github Issues"
+    required: true
+
+  GITHUB_REPO:
+    description: "Repo that will host the created Github issues"
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"

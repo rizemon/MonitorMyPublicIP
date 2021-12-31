@@ -1,0 +1,21 @@
+name: Scan
+on:
+  schedule:
+    # Set to run everyday at 12pm
+    - cron: '0 12 * * *'
+
+jobs:
+  nmap:
+
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Clone repo
+        uses: actions/checkout@v2
+      
+      - name: Start nmap container
+        uses: ./nmap-action
+        with:
+          IP_ADDRESS:   ${{ secrets.IP_ADDRESS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO:  ${{ github.repository }}
