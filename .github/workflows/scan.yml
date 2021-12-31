@@ -4,6 +4,8 @@ on:
     # Set to run everyday at 12pm
     - cron: '0 12 * * *'
 
+  workflow_dispatch:
+
 jobs:
   nmap:
 
