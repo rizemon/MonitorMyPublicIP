@@ -8,11 +8,11 @@ anonymous_ip="xXx.xXx.xXx.xXx"
 /usr/bin/nmap -n -p- "$INPUT_IP_ADDRESS" -oN "$results_file" 2>&1 > /dev/null
 
 # Replace newlines and replace IP address
-results=$(sed ':a;N;$!ba;s/\n/\\n/g' "$results_file" | sed "s/$IP_ADDRESS/$anonymous_ip/g")
+results=$(sed ':a;N;$!ba;s/\n/\\n/g' "$results_file" | sed "s/$INPUT_IP_ADDRESS/$anonymous_ip/g")
 
 # Create issue
-curl -XPOST "https://api.github.com/repos/$GITHUB_REPO/issues" \
-     -H "Authorization: token $GITHUB_TOKEN" \
+curl -XPOST "https://api.github.com/repos/$INPUT_GITHUB_REPO/issues" \
+     -H "Authorization: token $INPUT_GITHUB_TOKEN" \
      -H "Content-Type: application/vnd.github.v3+json" \
      -d "{
   \"title\": \"Scan results on $today\",
