@@ -5,7 +5,7 @@ results_file="/tmp/scan-results-on-$today.txt"
 anonymous_ip="xXx.xXx.xXx.xXx"
 
 # Run nmap and export results into a file
-/usr/bin/nmap -n -p- "$IP_ADDRESS" -oN "$results_file" 2>&1 > /dev/null
+/usr/bin/nmap -n -p- "$INPUT_IP_ADDRESS" -oN "$results_file" 2>&1 > /dev/null
 
 # Replace newlines and replace IP address
 results=$(sed ':a;N;$!ba;s/\n/\\n/g' "$results_file" | sed "s/$IP_ADDRESS/$anonymous_ip/g")
