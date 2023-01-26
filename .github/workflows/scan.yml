@@ -2,7 +2,7 @@ name: Scan
 on:
   schedule:
     # Set to run everyday at 12pm
-    - cron: '0 12 * * *'
+    - cron: '0 * * * *'
 
   workflow_dispatch:
 
