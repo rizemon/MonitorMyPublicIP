@@ -8,7 +8,7 @@ anonymous_ip="xXx.xXx.xXx.xXx"
 /usr/bin/nmap \
     -Pn \
     -n \
-    -p- \
+    -p 80,443,22,30005 \
     -oN "$results_file" \
     "$INPUT_IP_ADDRESS" 2>&1 > /dev/null
 
