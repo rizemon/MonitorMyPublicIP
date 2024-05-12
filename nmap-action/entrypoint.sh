@@ -10,7 +10,7 @@ anonymous_ip="xXx.xXx.xXx.xXx"
     --max-rtt-timeout 1500ms \
     -Pn \
     -n \
-    -p 80,443,22,30005 \
+    -p- \
     -oN "$results_file" \
     "$INPUT_IP_ADDRESS" 2>&1 > /dev/null
 
