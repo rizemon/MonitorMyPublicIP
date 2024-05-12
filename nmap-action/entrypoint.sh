@@ -7,7 +7,7 @@ anonymous_ip="xXx.xXx.xXx.xXx"
 # Run nmap and export results into a file
 /usr/bin/nmap \
     --min-rate 4500 \
-    --max-rtt-timeout 1500ms \
+    --max-rtt-timeout 5000ms \
     -Pn \
     -n \
     -p- \
